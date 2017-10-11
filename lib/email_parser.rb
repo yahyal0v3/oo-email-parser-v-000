@@ -15,10 +15,7 @@ class EmailParser
     email_array.each do |email|
       email[-1] = "" if email.include?(",")
     end
-    email_array.delete_if do |email|
-      email == email
-    end
-    email_array
+    email_array.uniq
   end
 
 end
